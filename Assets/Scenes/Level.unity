@@ -2608,9 +2608,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb0f0fcf4c94664ba1ba3f9e1a06e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _minSwipeDistance: 5
+  _dashRate: 2
   _upwardsVelocity: 5
   _forwardVelocity: 700
-  rb: {fileID: 0}
   _torque: 1
 --- !u!65 &1549222220
 BoxCollider:
