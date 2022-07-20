@@ -5,7 +5,7 @@ using UnityEngine;
 public class Knife : MonoBehaviour
 {
     [SerializeField]
-    private float _minSwipeDistance;
+    private float _dragDistance;
     [SerializeField]
     private float _dashRate;
     private float _lastDash;
@@ -13,13 +13,13 @@ public class Knife : MonoBehaviour
     private GameManager _gameManager;
     private Vector3 _firstTouchPos;
     private Vector3 _finalTouchPos;
-    private float _swipeAngle;
     public float _upwardsVelocity = 1f;
     public float _forwardVelocity = 1f;
     public float _torque = 1f;
 
     void Start()
     {
+        _dragDistance = Screen.height * 15 / 100;
         rb = GetComponent<Rigidbody>();
         _gameManager = GameObject.FindObjectOfType<GameManager>();
     }
@@ -28,34 +28,57 @@ public class Knife : MonoBehaviour
     {
         if(_gameManager.GameState == GameState.Playing)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                KnifeMovement();
-                _firstTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            }
-            if(Input.GetMouseButtonUp(0))
-            {
-                _finalTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                float swipeDist = Mathf.Abs(_finalTouchPos.x - _firstTouchPos.x);
-                //Debug.Log(swipeDist);
-                //CalculateAngle();
-            }
-            //Debug.Log(transform.InverseTransformDirection(rb.angularVelocity).x);
-
-            //Stopping the knife from unlimited rotation speed when touch is spammed
-            KnifeAngularDrag();
-            //test
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                KnifeDash();
-            }
-
-            //if (swipeDist > _minSwipeDistance)
+            //if (Input.GetMouseButtonDown(0))
             //{
-
-            //    Debug.Log("Swiped");
+            //    KnifeMovement();
             //}
+           
+            ////Dash test
+            //if (Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    KnifeDash();
+            //}
+
+
+            //for Android Input
+            if(Input.touchCount>0)
+            {
+                Touch touch = Input.GetTouch(0);
+                if(touch.phase == TouchPhase.Began)
+                {
+                    _firstTouchPos = touch.position;
+                    _finalTouchPos = touch.position;
+                }
+                else if(touch.phase == TouchPhase.Moved)
+                {
+                    _finalTouchPos = touch.position;
+                }
+                else if (touch.phase == TouchPhase.Ended)
+                {
+                    _finalTouchPos = touch.position;
+                    if (Mathf.Abs(_finalTouchPos.x - _firstTouchPos.x)> _dragDistance || Mathf.Abs(_finalTouchPos.y - _firstTouchPos.y) > _dragDistance)
+                    { 
+                        if(Mathf.Abs(_finalTouchPos.x -  _firstTouchPos.x) > Mathf.Abs(_finalTouchPos.y - _firstTouchPos.y))
+                        {
+                            if (_finalTouchPos.x > _firstTouchPos.x)
+                            {
+                                //right swipe
+                                KnifeDash();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        //tap
+                        KnifeMovement();
+                    }
+                }
+            }
         }
+        //Debug.Log(transform.InverseTransformDirection(rb.angularVelocity).x);
+
+        //Stopping the knife from unlimited rotation speed when touch is spammed
+        KnifeAngularDrag();
 
     }
 
@@ -82,16 +105,5 @@ public class Knife : MonoBehaviour
             rb.AddTorque(new Vector3(-(_torque / 8), 0, 0), ForceMode.Impulse);
         }
     }
-    private void CalculateAngle()
-    {
-        _swipeAngle = Mathf.Atan2(_finalTouchPos.y - _firstTouchPos.y, _finalTouchPos.x - _firstTouchPos.x) * 180/Mathf.PI;
-        Debug.Log(_swipeAngle);
-    }
-
-    private void SwipeDistanceCheckMet()
-    {
-        float swipeDist = Mathf.Abs(_finalTouchPos.z - _firstTouchPos.z);
-        Debug.Log(swipeDist);
-        //return swipeDist > _minSwipeDistance;
-    }
+   
 }
