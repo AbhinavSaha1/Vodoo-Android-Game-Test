@@ -38,7 +38,16 @@ public class Knife : MonoBehaviour
 
                 //}
                 rb.AddTorque(new Vector3(_torque, 0, 0), ForceMode.Impulse);
+            }
+            Debug.Log(transform.InverseTransformDirection(rb.angularVelocity).x);
 
+            if(transform.InverseTransformDirection(rb.angularVelocity).x > 0.08)
+            {
+                rb.AddTorque(new Vector3(-(_torque/8), 0, 0), ForceMode.Impulse);
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.angularVelocity = Vector3.zero;
             }
             //if(Input.GetMouseButtonUp(0))
             //{

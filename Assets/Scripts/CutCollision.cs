@@ -20,16 +20,7 @@ public class CutCollision : MonoBehaviour
     {
         if(_gameManager.GameState == GameState.Playing)
         {
-            if (collision.gameObject.CompareTag("Sliceable"))
-            {
-                CubeCut.Cut(collision.transform, transform.position);
-                UpdateScore();
-            }
-            if (collision.gameObject.CompareTag("Obstacle"))
-            {
-                Debug.Log("Game over!");
-                _gameManager.GameState = GameState.Lose;
-            }
+            
         }
         
     }
@@ -37,7 +28,17 @@ public class CutCollision : MonoBehaviour
     {
         if (_gameManager.GameState == GameState.Playing)
         {
-            if(other.gameObject.CompareTag("EndLevelCheckPoint"))
+            if (other.gameObject.CompareTag("Sliceable"))
+            {
+                CubeCut.Cut(other.transform, transform.position);
+                UpdateScore();
+            }
+            if (other.gameObject.CompareTag("Obstacle"))
+            {
+                Debug.Log("Game over!");
+                _gameManager.GameState = GameState.Lose;
+            }
+            if (other.gameObject.CompareTag("EndLevelCheckPoint"))
             {
                 _gameManager.GameState = GameState.Win;
             }
