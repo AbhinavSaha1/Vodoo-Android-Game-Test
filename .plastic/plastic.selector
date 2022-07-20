@@ -1,0 +1,4 @@
+repository "Vodoo Android Game Test@PersonalProjLite@cloud"
+  path "/"
+    br "/main"
+    co "/main"
