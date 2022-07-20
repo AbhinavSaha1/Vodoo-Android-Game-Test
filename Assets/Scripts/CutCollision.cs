@@ -16,14 +16,6 @@ public class CutCollision : MonoBehaviour
         _gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(_gameManager.GameState == GameState.Playing)
-        {
-            
-        }
-        
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (_gameManager.GameState == GameState.Playing)
@@ -32,16 +24,7 @@ public class CutCollision : MonoBehaviour
             {
                 CubeCut.Cut(other.transform, transform.position);
                 UpdateScore();
-            }
-            if (other.gameObject.CompareTag("Obstacle"))
-            {
-                Debug.Log("Game over!");
-                _gameManager.GameState = GameState.Lose;
-            }
-            if (other.gameObject.CompareTag("EndLevelCheckPoint"))
-            {
-                _gameManager.GameState = GameState.Win;
-            }
+            }   
         }
     }
     public void UpdateScore()

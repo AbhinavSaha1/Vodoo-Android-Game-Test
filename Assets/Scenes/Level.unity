@@ -2004,6 +2004,8 @@ GameObject:
   - component: {fileID: 1294282699}
   - component: {fileID: 1294282698}
   - component: {fileID: 1294282697}
+  - component: {fileID: 1294282700}
+  - component: {fileID: 1294282701}
   m_Layer: 6
   m_Name: Handle
   m_TagString: Untagged
@@ -2036,8 +2038,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1325375, y: 1.1566672, z: 1}
-  m_Center: {x: 0.035099093, y: -0.0131336795, z: 0}
+  m_Size: {x: 0.98828924, y: 1.0346998, z: 0.98249215}
+  m_Center: {x: -0.037025057, y: -0.027019057, z: 0.00875394}
 --- !u!23 &1294282698
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2087,6 +2089,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294282695}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1294282700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294282695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d569b9abb58bb70489a6aef50d011b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _knifeRb: {fileID: 1549222218}
+--- !u!65 &1294282701
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294282695}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0627904, y: 1.2100012, z: 1.0445588}
+  m_Center: {x: 0.00022555483, y: -0.04105004, z: -0.022279177}
 --- !u!1 &1464077423
 GameObject:
   m_ObjectHideFlags: 0
@@ -2528,6 +2556,7 @@ GameObject:
   - component: {fileID: 1549222219}
   - component: {fileID: 1549222218}
   - component: {fileID: 1549222220}
+  - component: {fileID: 1549222221}
   m_Layer: 6
   m_Name: Knife
   m_TagString: Untagged
@@ -2581,8 +2610,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _upwardsVelocity: 5
   _forwardVelocity: 700
+  rb: {fileID: 0}
   _torque: 1
-  _animator: {fileID: 0}
 --- !u!65 &1549222220
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2596,6 +2625,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0977226, y: 1.3660449, z: 1}
   m_Center: {x: -0.069200195, y: -0.04978494, z: 0}
+--- !u!114 &1549222221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549222216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ef217c36c728c44b1e6ae30ddf51d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1593768731
 GameObject:
   m_ObjectHideFlags: 0
