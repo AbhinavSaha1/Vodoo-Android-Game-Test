@@ -26,60 +26,75 @@ public class Knife : MonoBehaviour
 
     void Update()
     {
-        if(_gameManager.GameState == GameState.Playing)
+        if (_gameManager.GameState == GameState.Playing)
         {
-            //if (Input.GetMouseButtonDown(0))
-            //{
-            //    KnifeMovement();
-            //}
-           
-            ////Dash test
-            //if (Input.GetKeyDown(KeyCode.Space))
-            //{
-            //    KnifeDash();
-            //}
-
-
-            //for Android Input
-            if(Input.touchCount>0)
+            AndroidInput();
+            if (SystemInfo.deviceType == DeviceType.Handheld)
             {
-                Touch touch = Input.GetTouch(0);
-                if(touch.phase == TouchPhase.Began)
+                //AndroidInput();
+            }
+            else
+            {
+                Debug.Log("You are on Windows");
+                WindowsInput();
+            }
+            //Stopping the knife from unlimited rotation speed when touch is spammed
+            KnifeAngularDrag();
+            //Debug.Log(transform.InverseTransformDirection(rb.angularVelocity).x);
+        }
+
+
+    }
+
+    private void WindowsInput()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            KnifeMovement();
+        }
+
+        //Dash test
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            KnifeDash();
+        }
+    }
+
+    private void AndroidInput()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                _firstTouchPos = touch.position;
+                _finalTouchPos = touch.position;
+            }
+            else if (touch.phase == TouchPhase.Moved)
+            {
+                _finalTouchPos = touch.position;
+            }
+            else if (touch.phase == TouchPhase.Ended)
+            {
+                _finalTouchPos = touch.position;
+                if (Mathf.Abs(_finalTouchPos.x - _firstTouchPos.x) > _dragDistance || Mathf.Abs(_finalTouchPos.y - _firstTouchPos.y) > _dragDistance)
                 {
-                    _firstTouchPos = touch.position;
-                    _finalTouchPos = touch.position;
-                }
-                else if(touch.phase == TouchPhase.Moved)
-                {
-                    _finalTouchPos = touch.position;
-                }
-                else if (touch.phase == TouchPhase.Ended)
-                {
-                    _finalTouchPos = touch.position;
-                    if (Mathf.Abs(_finalTouchPos.x - _firstTouchPos.x)> _dragDistance || Mathf.Abs(_finalTouchPos.y - _firstTouchPos.y) > _dragDistance)
-                    { 
-                        if(Mathf.Abs(_finalTouchPos.x -  _firstTouchPos.x) > Mathf.Abs(_finalTouchPos.y - _firstTouchPos.y))
+                    if (Mathf.Abs(_finalTouchPos.x - _firstTouchPos.x) > Mathf.Abs(_finalTouchPos.y - _firstTouchPos.y))
+                    {
+                        if (_finalTouchPos.x > _firstTouchPos.x)
                         {
-                            if (_finalTouchPos.x > _firstTouchPos.x)
-                            {
-                                //right swipe
-                                KnifeDash();
-                            }
+                            //right swipe
+                            KnifeDash();
                         }
                     }
-                    else
-                    {
-                        //tap
-                        KnifeMovement();
-                    }
+                }
+                else
+                {
+                    //tap
+                    KnifeMovement();
                 }
             }
         }
-        //Debug.Log(transform.InverseTransformDirection(rb.angularVelocity).x);
-
-        //Stopping the knife from unlimited rotation speed when touch is spammed
-        KnifeAngularDrag();
-
     }
 
     private void KnifeDash()
