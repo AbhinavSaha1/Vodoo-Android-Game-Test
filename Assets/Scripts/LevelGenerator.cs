@@ -42,7 +42,6 @@ public class LevelGenerator : MonoBehaviour
         _firstLevelPrefab = Instantiate(_levelPrefabs[0], new Vector3(0, 0, 0), Quaternion.Euler(0f, 90f, 0f));
 
         _previousLevelPrefab = _firstLevelPrefab;
-        
         for (int i = 1; i < _selectedNoOfLevelPrefabs; i++)
         {
             Debug.Log("Spawning object" + (i + 1));

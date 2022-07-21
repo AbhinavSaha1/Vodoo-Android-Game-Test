@@ -22,7 +22,7 @@ public class KnifeHandleCollision : MonoBehaviour
             {
                 //Debug.Log("Entered trigger");
                 _knifeRb.velocity = Vector3.up * _knife._upwardsVelocity;
-                _knifeRb.AddForce(Vector3.forward * - (_knife._forwardVelocity/5) * Time.deltaTime, ForceMode.Impulse);
+                _knifeRb.AddForce(Vector3.forward * - (_knife._forwardVelocity/10) * Time.deltaTime, ForceMode.Impulse);
                 _knifeRb.AddTorque(new Vector3(- _knife._torque, 0, 0), ForceMode.Impulse);
             }
         }

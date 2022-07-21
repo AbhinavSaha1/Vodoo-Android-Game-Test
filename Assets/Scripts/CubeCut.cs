@@ -26,7 +26,8 @@ public class CubeCut : MonoBehaviour
 		rightSideObj.transform.localScale = new Vector3(rightWidth, victimScale.y, victimScale.z);
 		rightSideObj.AddComponent<Rigidbody>().mass = 100f;
 		rightSideObj.GetComponent<MeshRenderer>().material = mat;
-		rightSideObj.GetComponent<Rigidbody>().AddForce(Vector3.left * 150, ForceMode.Impulse);
+		rightSideObj.GetComponent<Rigidbody>().AddForce(Vector3.left * 800, ForceMode.Impulse);
+		Destroy(rightSideObj, 20);
 
 		GameObject leftSideObj = GameObject.CreatePrimitive(PrimitiveType.Cube);
 		leftSideObj.transform.position = (leftPoint + pos) / 2;
@@ -34,7 +35,8 @@ public class CubeCut : MonoBehaviour
 		leftSideObj.transform.localScale = new Vector3(leftWidth, victimScale.y , victimScale.z);
 		leftSideObj.AddComponent<Rigidbody>().mass = 100f;
 		leftSideObj.GetComponent<MeshRenderer>().material = mat;
-		leftSideObj.GetComponent<Rigidbody>().AddForce(Vector3.right * 150, ForceMode.Impulse);
+		leftSideObj.GetComponent<Rigidbody>().AddForce(Vector3.right * 900, ForceMode.Impulse);
+		Destroy(leftSideObj, 20);
 
 		return true;
 	}

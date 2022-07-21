@@ -7,9 +7,12 @@ public class CutCollision : MonoBehaviour
 {
     [SerializeField]
     private int _score = 0;
+    [SerializeField]
+    private Rigidbody _rb;
     public Text ScoreText;
     public Text WinScoreText;
     private GameManager _gameManager;
+    
 
     private void Start()
     {
@@ -23,6 +26,7 @@ public class CutCollision : MonoBehaviour
             if (other.gameObject.CompareTag("Sliceable"))
             {
                 CubeCut.Cut(other.transform, transform.position);
+                _rb.angularVelocity = Vector3.zero;
                 UpdateScore();
             }   
         }

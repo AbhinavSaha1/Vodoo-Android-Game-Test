@@ -5,6 +5,8 @@ using UnityEngine;
 public class Knife : MonoBehaviour
 {
     [SerializeField]
+    private float _dashForce = 2.5f;
+    [SerializeField]
     private float _dragDistance;
     [SerializeField]
     private float _dashRate;
@@ -40,7 +42,7 @@ public class Knife : MonoBehaviour
             }
             //Stopping the knife from unlimited rotation speed when touch is spammed
             KnifeAngularDrag();
-            //Debug.Log(transform.InverseTransformDirection(rb.angularVelocity).x);
+            Debug.Log(transform.InverseTransformDirection(rb.angularVelocity).x);
         }
 
 
@@ -102,7 +104,7 @@ public class Knife : MonoBehaviour
         if (Time.time > _dashRate + _lastDash)
         {
             rb.angularVelocity = Vector3.zero;
-            rb.AddForce(Vector3.forward * _forwardVelocity * 2.5f * Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce(Vector3.forward * _forwardVelocity * _dashForce * Time.deltaTime, ForceMode.Impulse);
             _lastDash = Time.time;
         }
     }
@@ -115,7 +117,7 @@ public class Knife : MonoBehaviour
     }
     private void KnifeAngularDrag()
     {
-        if (transform.InverseTransformDirection(rb.angularVelocity).x > 0.02)
+        if (transform.InverseTransformDirection(rb.angularVelocity).x > 0.011)
         {
             rb.AddTorque(new Vector3(-(_torque / 8), 0, 0), ForceMode.Impulse);
         }
