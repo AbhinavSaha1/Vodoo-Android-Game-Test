@@ -35,7 +35,7 @@ public class Knife : MonoBehaviour
             }
             else
             {
-                Debug.Log("You are on Windows");
+                //Debug.Log("You are on Windows");
                 WindowsInput();
             }
             //Stopping the knife from unlimited rotation speed when touch is spammed
