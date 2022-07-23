@@ -20,7 +20,7 @@ public class LevelGenerator : MonoBehaviour
     private float _prefabSpawnOffset;
     private GameObject _spawnedLevelPrefab                ;
     private GameObject _previousLevelPrefab;
-    // Start is called before the first frame update
+
     private void Awake()
     {
         GenerateLevel();
@@ -42,7 +42,7 @@ public class LevelGenerator : MonoBehaviour
             _levelPrefabs.RemoveAt(_selectedPrefabIndex);
             _previousLevelPrefab = _spawnedLevelPrefab;
         }
-
+        //Spawning last prefab at the end
         Instantiate(_lastLevelPrefab, new Vector3(_firstLevelPrefab.transform.position.x, _firstLevelPrefab.transform.position.y, _previousLevelPrefab.transform.position.z + (_spawnedLevelPrefab.transform.localScale.x) / 2 + (_previousLevelPrefab.transform.localScale.x) / 2), Quaternion.Euler(0f, 90f, 0f));
     }
 

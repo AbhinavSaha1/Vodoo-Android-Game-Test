@@ -10,7 +10,7 @@ public class Knife : MonoBehaviour
     private float _dragDistance;
     [SerializeField]
     private float _dashRate;
-    private float _lastDash;
+    private float _dashCooldown;
     private Rigidbody rb;
     private GameManager _gameManager;
     private Vector3 _firstTouchPos;
@@ -101,11 +101,11 @@ public class Knife : MonoBehaviour
 
     private void KnifeDash()
     {
-        if (Time.time > _dashRate + _lastDash)
+        if (Time.time > _dashRate + _dashCooldown)
         {
             rb.angularVelocity = Vector3.zero;
             rb.AddForce(Vector3.forward * _forwardVelocity * _dashForce * Time.deltaTime, ForceMode.Impulse);
-            _lastDash = Time.time;
+            _dashCooldown = Time.time;
         }
     }
 
