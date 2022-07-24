@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Knife : MonoBehaviour
 {
     [SerializeField]
@@ -10,10 +11,11 @@ public class Knife : MonoBehaviour
     private float _dragDistance;
     [SerializeField]
     private float _dashRate;
-    private float _dashCooldown;
     [SerializeField]
     private float _gravityODuration;
-    private float _gravityOCooldown;
+    [SerializeField]
+    private GameObject _dashUI;
+    private float _dashCooldown;
     private Rigidbody rb;
     private GameManager _gameManager;
     private Vector3 _firstTouchPos;
@@ -106,14 +108,17 @@ public class Knife : MonoBehaviour
     {
         if (Time.time > _dashRate + _dashCooldown)
         {
+            _dashUI.SetActive(false);
             rb.angularVelocity = Vector3.zero;
             rb.useGravity = false;
             rb.AddForce(Vector3.forward * _forwardVelocity * _dashForce * Time.deltaTime, ForceMode.Impulse);
             _dashCooldown = Time.time;
             yield return new WaitForSeconds(_gravityODuration);
             rb.useGravity = true;
-
+            yield return new WaitForSeconds(_dashRate - _gravityODuration);
+            _dashUI.SetActive(true);
         }
+
     }
 
     private void KnifeMovement()
