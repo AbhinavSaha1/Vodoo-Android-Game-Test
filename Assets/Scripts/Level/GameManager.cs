@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public GameObject WinScreen;
     public GameObject LoseScreen;
     public GameObject StartMenu;
+    public GameObject ScoreText;
+    public bool _isLevelLoading = false;
 
     void Start()
     {
@@ -33,8 +35,8 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && GameState == GameState.Start)
         {
-            StartMenu.SetActive(false);
-            GameState = GameState.Playing;
+            //Giving some time for the menue scene to load if OnClick event for the Menue button is triggered
+            StartCoroutine(Setup());
         }
        
         if (GameState == GameState.Win)
@@ -57,10 +59,22 @@ public class GameManager : MonoBehaviour
     public void NextLevel()
     {
         _levelRef.CurrentLevel += 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void RestartLevel()
     {
-        SceneManager.LoadScene(0);    
+        SceneManager.LoadScene(1);    
+    }
+    public void BackToMenu()
+    {
+        _isLevelLoading = true;
+        SceneManager.LoadScene(0);
+    }
+    IEnumerator Setup()
+    {
+        yield return new WaitForSeconds(0.1f);
+        StartMenu.SetActive(false);
+        ScoreText.SetActive(true);
+        GameState = GameState.Playing;
     }
 }
