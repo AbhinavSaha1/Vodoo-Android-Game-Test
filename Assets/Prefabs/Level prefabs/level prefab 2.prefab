@@ -312,6 +312,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1930478389890886719, guid: e7df8fb08c976364ea1ed19da9b9ab5b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00adad848e0675c459037ad83c397c1e, type: 2}
     - target: {fileID: 6943062280665912892, guid: e7df8fb08c976364ea1ed19da9b9ab5b, type: 3}
       propertyPath: m_Name
       value: Thick cube (3)
@@ -374,6 +378,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1930478389890886719, guid: e7df8fb08c976364ea1ed19da9b9ab5b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6ad53a87877773b48a2b587122a0a136, type: 2}
     - target: {fileID: 6943062280665912892, guid: e7df8fb08c976364ea1ed19da9b9ab5b, type: 3}
       propertyPath: m_Name
       value: Thick cube (5)
@@ -560,6 +568,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1930478389890886719, guid: e7df8fb08c976364ea1ed19da9b9ab5b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00adad848e0675c459037ad83c397c1e, type: 2}
     - target: {fileID: 6943062280665912892, guid: e7df8fb08c976364ea1ed19da9b9ab5b, type: 3}
       propertyPath: m_Name
       value: Thick cube (6)
@@ -684,6 +696,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1930478389890886719, guid: e7df8fb08c976364ea1ed19da9b9ab5b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6ad53a87877773b48a2b587122a0a136, type: 2}
     - target: {fileID: 6943062280665912892, guid: e7df8fb08c976364ea1ed19da9b9ab5b, type: 3}
       propertyPath: m_Name
       value: Thick cube (4)
@@ -746,6 +762,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1930478389890886719, guid: e7df8fb08c976364ea1ed19da9b9ab5b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00adad848e0675c459037ad83c397c1e, type: 2}
     - target: {fileID: 6943062280665912892, guid: e7df8fb08c976364ea1ed19da9b9ab5b, type: 3}
       propertyPath: m_Name
       value: Thick cube (3)
@@ -808,6 +828,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1930478389890886719, guid: e7df8fb08c976364ea1ed19da9b9ab5b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00adad848e0675c459037ad83c397c1e, type: 2}
     - target: {fileID: 6943062280665912892, guid: e7df8fb08c976364ea1ed19da9b9ab5b, type: 3}
       propertyPath: m_Name
       value: Thick cube (5)

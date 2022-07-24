@@ -485,6 +485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tall v thin cube  (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4223919638604055758, guid: c6c76d7d6ced5174ca39e215c5f017f6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9d98de6eeed70f74380f027449107d5f, type: 2}
     - target: {fileID: 4373366371092485699, guid: c6c76d7d6ced5174ca39e215c5f017f6, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -559,6 +563,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tall v thin cube  (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4223919638604055758, guid: c6c76d7d6ced5174ca39e215c5f017f6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9d98de6eeed70f74380f027449107d5f, type: 2}
     - target: {fileID: 4373366371092485699, guid: c6c76d7d6ced5174ca39e215c5f017f6, type: 3}
       propertyPath: m_RootOrder
       value: 3

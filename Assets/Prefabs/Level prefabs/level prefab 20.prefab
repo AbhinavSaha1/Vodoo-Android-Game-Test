@@ -253,7 +253,6 @@ Transform:
   m_LocalScale: {x: 0.10609185, y: 0.19193856, z: 0.021437567}
   m_Children:
   - {fileID: 7764093015131094175}
-  - {fileID: 7764093015542299465}
   - {fileID: 7764093015352590779}
   - {fileID: 7764093014985075883}
   - {fileID: 7764093015486911602}
@@ -931,7 +930,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -973,6 +972,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3451031552522468220, guid: 18b96476740b33842aac31c471d376a8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 041ae26c82da239498d5486b3f60790a, type: 2}
     - target: {fileID: 4321988493837438857, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_Name
       value: Thin cube (17)
@@ -993,7 +996,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1175,6 +1178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3451031552522468220, guid: 18b96476740b33842aac31c471d376a8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 041ae26c82da239498d5486b3f60790a, type: 2}
     - target: {fileID: 4321988493837438857, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_Name
       value: Thin cube (17)
@@ -1195,7 +1202,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1237,6 +1244,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3451031552522468220, guid: 18b96476740b33842aac31c471d376a8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 041ae26c82da239498d5486b3f60790a, type: 2}
     - target: {fileID: 4321988493837438857, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_Name
       value: Thin cube (19)
@@ -1247,68 +1258,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
   m_PrefabInstance: {fileID: 9145984171963313107}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &9145984172039973027
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 9145984172167128229}
-    m_Modifications:
-    - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4321988493837438857, guid: 18b96476740b33842aac31c471d376a8, type: 3}
-      propertyPath: m_Name
-      value: Thin cube (13)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 18b96476740b33842aac31c471d376a8, type: 3}
---- !u!4 &7764093015542299465 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
-  m_PrefabInstance: {fileID: 9145984172039973027}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9145984172094607279
 PrefabInstance:
@@ -1369,6 +1318,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3451031552522468220, guid: 18b96476740b33842aac31c471d376a8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 041ae26c82da239498d5486b3f60790a, type: 2}
     - target: {fileID: 4321988493837438857, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_Name
       value: Thin cube (19)
@@ -1521,7 +1474,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1583,7 +1536,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1625,6 +1578,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3451031552522468220, guid: 18b96476740b33842aac31c471d376a8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 041ae26c82da239498d5486b3f60790a, type: 2}
     - target: {fileID: 4321988493837438857, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_Name
       value: Thin cube (15)
@@ -1645,7 +1602,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1707,7 +1664,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1749,6 +1706,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3451031552522468220, guid: 18b96476740b33842aac31c471d376a8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 041ae26c82da239498d5486b3f60790a, type: 2}
     - target: {fileID: 4321988493837438857, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_Name
       value: Thin cube (21)
@@ -1819,6 +1780,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3451031552522468220, guid: 18b96476740b33842aac31c471d376a8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 041ae26c82da239498d5486b3f60790a, type: 2}
     - target: {fileID: 4321988493837438857, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_Name
       value: Thin cube (15)
@@ -1889,6 +1854,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3451031552522468220, guid: 18b96476740b33842aac31c471d376a8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 041ae26c82da239498d5486b3f60790a, type: 2}
     - target: {fileID: 4321988493837438857, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_Name
       value: Thin cube (20)
@@ -1979,7 +1948,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1536441415376360426, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2091,6 +2060,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3451031552522468220, guid: 18b96476740b33842aac31c471d376a8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 041ae26c82da239498d5486b3f60790a, type: 2}
     - target: {fileID: 4321988493837438857, guid: 18b96476740b33842aac31c471d376a8, type: 3}
       propertyPath: m_Name
       value: Thin cube (16)

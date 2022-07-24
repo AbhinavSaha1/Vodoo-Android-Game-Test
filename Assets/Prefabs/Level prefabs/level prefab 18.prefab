@@ -1272,6 +1272,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Horizontal cube (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 6632917456689986391, guid: 29cd6d60e94b7464a8b1e90a66c2391d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00adad848e0675c459037ad83c397c1e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29cd6d60e94b7464a8b1e90a66c2391d, type: 3}
 --- !u!4 &2928309710401860062 stripped
@@ -1412,6 +1416,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Horizontal cube (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 6632917456689986391, guid: 29cd6d60e94b7464a8b1e90a66c2391d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00adad848e0675c459037ad83c397c1e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29cd6d60e94b7464a8b1e90a66c2391d, type: 3}
 --- !u!4 &2928309710087103384 stripped
@@ -1618,6 +1626,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Horizontal cube (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 6632917456689986391, guid: 29cd6d60e94b7464a8b1e90a66c2391d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00adad848e0675c459037ad83c397c1e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29cd6d60e94b7464a8b1e90a66c2391d, type: 3}
 --- !u!4 &2928309710117337556 stripped
@@ -1898,6 +1910,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Horizontal cube (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 6632917456689986391, guid: 29cd6d60e94b7464a8b1e90a66c2391d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6ad53a87877773b48a2b587122a0a136, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29cd6d60e94b7464a8b1e90a66c2391d, type: 3}
 --- !u!4 &2928309709873322770 stripped
@@ -2248,6 +2264,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Horizontal cube (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 6632917456689986391, guid: 29cd6d60e94b7464a8b1e90a66c2391d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00adad848e0675c459037ad83c397c1e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29cd6d60e94b7464a8b1e90a66c2391d, type: 3}
 --- !u!4 &2928309711684651774 stripped
@@ -2672,6 +2692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Horizontal cube (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6632917456689986391, guid: 29cd6d60e94b7464a8b1e90a66c2391d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00adad848e0675c459037ad83c397c1e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29cd6d60e94b7464a8b1e90a66c2391d, type: 3}
 --- !u!4 &2928309711267015924 stripped
