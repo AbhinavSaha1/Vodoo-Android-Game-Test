@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum GameState
 {
@@ -14,20 +15,29 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
+    private LevelDataHolder _levelRef;
     public GameState GameState;
-    public int CurrentLevel;
     public GameObject WinScreen;
     public GameObject LoseScreen;
+    public GameObject StartMenu;
 
     void Start()
     {
-        GameState = GameState.Playing;
+        _levelRef = GameObject.FindObjectOfType<LevelDataHolder>();
+        GameState = GameState.Start;
+        StartMenu.SetActive(true);
     }
 
 
     void Update()
     {
-        if(GameState == GameState.Win)
+        if (Input.GetMouseButtonDown(0) && GameState == GameState.Start)
+        {
+            StartMenu.SetActive(false);
+            GameState = GameState.Playing;
+        }
+       
+        if (GameState == GameState.Win)
         {
             YouWin();
         }
@@ -46,10 +56,11 @@ public class GameManager : MonoBehaviour
     }
     public void NextLevel()
     {
-        SceneManager.LoadScene(CurrentLevel + 1);
+        _levelRef.CurrentLevel += 1;
+        SceneManager.LoadScene(0);
     }
     public void RestartLevel()
     {
-        SceneManager.LoadScene(CurrentLevel);
+        SceneManager.LoadScene(0);    
     }
 }

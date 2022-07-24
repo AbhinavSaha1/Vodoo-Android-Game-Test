@@ -11,7 +11,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     private int _selectedNoOfLevelPrefabs;
     [SerializeField]
-    private GameObject _firstLevelPrefab;
+    private GameObject[] _firstLevelPrefabs;
     [SerializeField]
     private GameObject _lastLevelPrefab;
     [SerializeField]
@@ -29,12 +29,13 @@ public class LevelGenerator : MonoBehaviour
     private void GenerateLevel()
     {
         _selectedNoOfLevelPrefabs = Random.Range(_minLevelPrefabs, _maxLevelPrefabs);
-        _firstLevelPrefab = Instantiate(_levelPrefabs[0], new Vector3(0, 0, 0), Quaternion.Euler(0f, 90f, 0f));
+        int _firstLevelPrefabIndex = Random.Range(0, _firstLevelPrefabs.Length);
+        GameObject _firstLevelPrefab = Instantiate(_firstLevelPrefabs[_firstLevelPrefabIndex], new Vector3(0, 0, 0), Quaternion.Euler(0f, 90f, 0f));
 
         _previousLevelPrefab = _firstLevelPrefab;
         for (int i = 1; i < _selectedNoOfLevelPrefabs; i++)
         {
-            Debug.Log("Spawning object" + (i + 1));
+            //Debug.Log("Spawning object" + (i + 1));
             int _selectedPrefabIndex = Random.Range(0, _levelPrefabs.Count);
             var _selectedPrefabSpawnPos = new Vector3(_firstLevelPrefab.transform.position.x, _firstLevelPrefab.transform.position.y, _previousLevelPrefab.transform.position.z + (_levelPrefabs[_selectedPrefabIndex].transform.localScale.x) / 2 + (_previousLevelPrefab.transform.localScale.x) / 2 + _prefabSpawnOffset);
             _spawnedLevelPrefab =  Instantiate(_levelPrefabs[_selectedPrefabIndex],_selectedPrefabSpawnPos , Quaternion.Euler(0f, 90f, 0f));
@@ -42,8 +43,9 @@ public class LevelGenerator : MonoBehaviour
             _levelPrefabs.RemoveAt(_selectedPrefabIndex);
             _previousLevelPrefab = _spawnedLevelPrefab;
         }
+        Debug.Log("Previous lvl prefab: " + _previousLevelPrefab.transform.name);
         //Spawning last prefab at the end
-        Instantiate(_lastLevelPrefab, new Vector3(_firstLevelPrefab.transform.position.x, _firstLevelPrefab.transform.position.y, _previousLevelPrefab.transform.position.z + (_spawnedLevelPrefab.transform.localScale.x) / 2 + (_previousLevelPrefab.transform.localScale.x) / 2), Quaternion.Euler(0f, 90f, 0f));
+        Instantiate(_lastLevelPrefab, new Vector3(_firstLevelPrefab.transform.position.x, _firstLevelPrefab.transform.position.y, _previousLevelPrefab.transform.position.z + _prefabSpawnOffset + (_lastLevelPrefab.transform.localScale.x) / 2 + (_previousLevelPrefab.transform.localScale.x) / 2), Quaternion.Euler(0f, 90f, 0f));
     }
 
 }

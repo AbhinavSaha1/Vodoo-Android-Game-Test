@@ -11,6 +11,9 @@ public class Knife : MonoBehaviour
     [SerializeField]
     private float _dashRate;
     private float _dashCooldown;
+    [SerializeField]
+    private float _gravityODuration;
+    private float _gravityOCooldown;
     private Rigidbody rb;
     private GameManager _gameManager;
     private Vector3 _firstTouchPos;
@@ -28,7 +31,7 @@ public class Knife : MonoBehaviour
 
     void Update()
     {
-        if (_gameManager.GameState == GameState.Playing)
+        if (_gameManager.GameState == GameState.Playing || _gameManager.GameState == GameState.Start)
         {
             AndroidInput();
             if (SystemInfo.deviceType == DeviceType.Handheld)
@@ -42,7 +45,7 @@ public class Knife : MonoBehaviour
             }
             //Stopping the knife from unlimited rotation speed when touch is spammed
             KnifeAngularDrag();
-            Debug.Log(transform.InverseTransformDirection(rb.angularVelocity).x);
+            //Debug.Log(transform.InverseTransformDirection(rb.angularVelocity).x);
         }
 
 
@@ -58,7 +61,7 @@ public class Knife : MonoBehaviour
         //Dash test
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            KnifeDash();
+            StartCoroutine(KnifeDash());
         }
     }
 
@@ -86,7 +89,7 @@ public class Knife : MonoBehaviour
                         if (_finalTouchPos.x > _firstTouchPos.x)
                         {
                             //right swipe
-                            KnifeDash();
+                            StartCoroutine(KnifeDash());
                         }
                     }
                 }
@@ -99,13 +102,17 @@ public class Knife : MonoBehaviour
         }
     }
 
-    private void KnifeDash()
+    private IEnumerator KnifeDash()
     {
         if (Time.time > _dashRate + _dashCooldown)
         {
             rb.angularVelocity = Vector3.zero;
+            rb.useGravity = false;
             rb.AddForce(Vector3.forward * _forwardVelocity * _dashForce * Time.deltaTime, ForceMode.Impulse);
             _dashCooldown = Time.time;
+            yield return new WaitForSeconds(_gravityODuration);
+            rb.useGravity = true;
+
         }
     }
 
