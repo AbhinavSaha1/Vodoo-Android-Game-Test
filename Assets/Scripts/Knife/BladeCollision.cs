@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CutCollision : MonoBehaviour
+public class BladeCollision : MonoBehaviour
 {
     [SerializeField]
     private int _score = 0;

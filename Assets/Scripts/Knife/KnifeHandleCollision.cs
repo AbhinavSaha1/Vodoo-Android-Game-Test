@@ -7,14 +7,14 @@ public class KnifeHandleCollision : MonoBehaviour
     [SerializeField]
     private Rigidbody _knifeRb;
     private GameManager _gameManager;
-    private Knife _knife;
+    private KnifeController _knife;
     private AudioManager _audioManager;
 
     private void Start()
     {
         _gameManager = GameObject.FindObjectOfType<GameManager>();
         _audioManager = FindObjectOfType<AudioManager>();
-        _knife = GameObject.FindObjectOfType<Knife>();
+        _knife = GameObject.FindObjectOfType<KnifeController>();
     }
     private void OnTriggerEnter(Collider other)
     {

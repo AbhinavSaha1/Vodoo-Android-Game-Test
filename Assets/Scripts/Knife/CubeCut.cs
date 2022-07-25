@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CubeCut : MonoBehaviour
 {
-	[SerializeField]
-	private static float _slicedCubeForce;
 
 	public static bool Cut(Transform victim, Vector3 _pos)
 	{

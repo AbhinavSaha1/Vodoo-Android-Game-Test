@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Knife : MonoBehaviour
+public class KnifeController : MonoBehaviour
 {
     [SerializeField]
     private float _dashForce = 2.5f;
@@ -39,10 +39,9 @@ public class Knife : MonoBehaviour
     {
         if (_gameManager.GameState == GameState.Playing || _gameManager.GameState == GameState.Start)
         {
-            AndroidInput();
             if (SystemInfo.deviceType == DeviceType.Handheld)
             {
-                //AndroidInput();
+                AndroidInput();
             }
             else
             {
@@ -51,7 +50,6 @@ public class Knife : MonoBehaviour
             }
             //Stopping the knife from unlimited rotation speed when touch is spammed
             KnifeAngularDrag();
-            //Debug.Log(transform.InverseTransformDirection(rb.angularVelocity).x);
         }
 
 

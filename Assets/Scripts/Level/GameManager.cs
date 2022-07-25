@@ -17,18 +17,22 @@ public class GameManager : MonoBehaviour
 {
     private LevelDataHolder _levelRef;
     public GameState GameState;
-    public GameObject WinScreen;
-    public GameObject LoseScreen;
-    public GameObject StartMenu;
-    public GameObject ScoreText;
-    public GameObject DashUI;
-    public bool _isLevelLoading = false;
+    [SerializeField]
+    private GameObject _winScreen;
+    [SerializeField]
+    public GameObject _loseScreen;
+    [SerializeField]
+    public GameObject _startMenu;
+    [SerializeField]
+    public GameObject _scoreText;
+    [SerializeField]
+    public GameObject _dashUI;
 
     void Start()
     {
         _levelRef = GameObject.FindObjectOfType<LevelDataHolder>();
         GameState = GameState.Start;
-        StartMenu.SetActive(true);
+        _startMenu.SetActive(true);
     }
 
 
@@ -51,11 +55,13 @@ public class GameManager : MonoBehaviour
     }
     public void YouWin()
     {
-        WinScreen.SetActive(true);
+        _dashUI.SetActive(false);
+        _winScreen.SetActive(true);
     }
     public void  YouLose()
     {
-        LoseScreen.SetActive(true);
+        _dashUI.SetActive(false);
+        _loseScreen.SetActive(true);
     }
     public void NextLevel()
     {
@@ -68,15 +74,14 @@ public class GameManager : MonoBehaviour
     }
     public void BackToMenu()
     {
-        _isLevelLoading = true;
         SceneManager.LoadScene(0);
     }
     IEnumerator Setup()
     {
         yield return new WaitForSeconds(0.15f);
-        StartMenu.SetActive(false);
-        ScoreText.SetActive(true);
-        DashUI.SetActive(true);
+        _startMenu.SetActive(false);
+        _scoreText.SetActive(true);
+        _dashUI.SetActive(true);
         GameState = GameState.Playing;
     }
 }
