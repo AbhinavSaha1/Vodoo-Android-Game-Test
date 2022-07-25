@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class KnifeCollision : MonoBehaviour
 {
@@ -17,10 +18,12 @@ public class KnifeCollision : MonoBehaviour
             if (collision.gameObject.CompareTag("Obstacle"))
             {
                 Debug.Log("Game over!");
+                FindObjectOfType<AudioManager>().Play("Level Failed");
                 _gameManager.GameState = GameState.Lose;
             }
             if (collision.gameObject.CompareTag("EndLevelCheckPoint"))
             {
+                FindObjectOfType<AudioManager>().Play("Win");
                 _gameManager.GameState = GameState.Win;
             }
         }

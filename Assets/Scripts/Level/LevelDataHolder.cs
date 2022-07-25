@@ -7,8 +7,7 @@ public class LevelDataHolder : MonoBehaviour
 {
     public static LevelDataHolder Instance;
     public int CurrentLevel;
-    public List<GameObject> LevelData = new List<GameObject>();
-    
+
     private void Awake()
     {
         if (Instance == null)

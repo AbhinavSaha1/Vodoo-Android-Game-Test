@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject LoseScreen;
     public GameObject StartMenu;
     public GameObject ScoreText;
+    public GameObject DashUI;
     public bool _isLevelLoading = false;
 
     void Start()
@@ -75,6 +76,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         StartMenu.SetActive(false);
         ScoreText.SetActive(true);
+        DashUI.SetActive(true);
         GameState = GameState.Playing;
     }
 }

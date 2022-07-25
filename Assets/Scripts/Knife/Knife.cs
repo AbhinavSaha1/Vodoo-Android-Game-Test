@@ -15,6 +15,10 @@ public class Knife : MonoBehaviour
     private float _gravityODuration;
     [SerializeField]
     private GameObject _dashUI;
+    [SerializeField]
+    private AudioSource _knifeAudio;
+    [SerializeField]
+    private AudioSource _knifeDashAudio;
     private float _dashCooldown;
     private Rigidbody rb;
     private GameManager _gameManager;
@@ -108,6 +112,7 @@ public class Knife : MonoBehaviour
     {
         if (Time.time > _dashRate + _dashCooldown)
         {
+            _knifeDashAudio.Play();
             _dashUI.SetActive(false);
             rb.angularVelocity = Vector3.zero;
             rb.useGravity = false;
@@ -123,6 +128,7 @@ public class Knife : MonoBehaviour
 
     private void KnifeMovement()
     {
+        _knifeAudio.Play();
         rb.velocity = Vector3.up * _upwardsVelocity;
         rb.AddForce(Vector3.forward * _forwardVelocity * Time.deltaTime, ForceMode.Impulse);
         rb.AddTorque(new Vector3(_torque, 0, 0), ForceMode.Impulse);

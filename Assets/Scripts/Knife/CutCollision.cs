@@ -12,11 +12,13 @@ public class CutCollision : MonoBehaviour
     public Text ScoreText;
     public Text WinScoreText;
     private GameManager _gameManager;
+    private AudioManager _audioManager;
     
 
     private void Start()
     {
         _gameManager = GameObject.FindObjectOfType<GameManager>();
+        _audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,6 +27,7 @@ public class CutCollision : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Sliceable"))
             {
+                _audioManager.Play("Slice");
                 CubeCut.Cut(other.transform, transform.position);
                 _rb.angularVelocity = Vector3.zero;
                 UpdateScore();
