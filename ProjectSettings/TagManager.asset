@@ -7,6 +7,9 @@ TagManager:
   - Sliceable
   - Obstacle
   - EndLevelCheckPoint
+  - StartImage
+  - YouWinImage
+  - LevelImage
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - UI
   - Knife
   - Non sliceable
-  - 
+  - Post Processing
   - 
   - 
   - 
